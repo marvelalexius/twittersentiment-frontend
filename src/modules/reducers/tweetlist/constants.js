@@ -1,0 +1,5 @@
+export const ADD_TWEET = "ADD_TWEET";
+export const START_STREAM = "START_STREAM";
+export const STOP_STREAM = "STOP_STREAM";
+export const ADD_SENTIMENT = "ADD_SENTIMENT";
+export const RESET_SENTIMENT_STATS = "RESET_SENTIMENT_STATS";

@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
 
-function App() {
+import TweetList from './pages/TweetList';
+import StreamNotification from './components/StreamNotifications/StreamNotifications';
+
+import Socket from './lib/sockets';
+
+const io = new Socket();
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <TweetList />
+      <StreamNotification io={io} />
+    </>
+  )
+};
 
-export default App;
+export default connect()(App);
